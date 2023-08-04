@@ -1,0 +1,37 @@
+
+
+<MODIFICATION A L'OEUIL (chatgpt)>
+
+<html lang="fr">
+-> les propriété alt
+<title> Portfolio | Nina Carducci</title>
+<label for="nom">Nom</label>
+changemement contraste fleche carousel
+supression outline : 0 pour les tab
+modification ordre boutons carousel pour les tabs
+reglage bug gallery js prev/next modal
+modification <span> filtre en <button>
+pas d'erreur de contrast apparent
+
+
+
+ensuite => audit automatique -->
+
+WAVES -> atribut alt
+-> y'a un truc louche sous le carousel
+boutton filtre 'tous" pas assez de contraste -> color : black;
+btn--active fonctionne pas -> changer la classe active-tag a active pour la couleur
+pas de page region =>  ajout balise <main> a la gallerie
+y'a meme pas de balise header => ajout balise header
+pas de balise footer non plus, le dev est fou => ajout balise footer
+ajout de balise section, ========> qu'est ce que je met des balise au quote ou je laisse en div ?
+Je m'attaque aux balise de titres avec headingmap
+
+
+
+
+AXEDEVTOOL 
+
+le carousel n'étais pas dans une region de la page => reglé
+Les sections n'avait pas de role="region" et d'aria-label
+la "quote" n'était pas dans une section
