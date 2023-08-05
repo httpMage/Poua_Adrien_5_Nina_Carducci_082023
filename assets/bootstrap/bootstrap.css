@@ -5527,9 +5527,11 @@ textarea.form-control-lg {
 }
 
 .modal-body {
+  display: flex;
+  justify-content: center;
   position: relative;
   flex: 1 1 auto;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 .modal-footer {
