@@ -6,6 +6,21 @@ body {
 	font-family: 'Inter';
 	font-style: normal;
 }
+@font-face {
+    font-family: 'inter';
+    src: url('/assets/fonts/Inter/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'spectral';
+    src: url('./assets/fonts/Spectral/Spectral-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+  
 .top-header {
 	background-color: white;
 	position: sticky;
