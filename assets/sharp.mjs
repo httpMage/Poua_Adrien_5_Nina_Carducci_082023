@@ -10,32 +10,28 @@
 //     console.error("Une erreur est survenue lors de la récupération des images:", err);
 //   }
 // }
-// function resize(image) {
-//   return sharp(image).resize({
-//     width: 1920,
-//   });
-// }
-// function formatToWebp(sharpedImage) {
-//   return sharpedImage.webp({ quality: 100 });
-// }
 
-// async function format(dossier) {
-//   let images = await getImages(dossier);
-//   let numberOfImages = images.length;
-//   for (let i = 0; i < numberOfImages; i++) {
-//     const fileExtension = path.extname(images[i]);
-//     const output = images[i].replace(fileExtension, ".webp");
-//     try {
-//       const resizedImage = await resize(images[i]);
-//       const webpImage = await formatToWebp(resizedImage);
-//       await webpImage.toFile(output);
-//       console.log(`L'image ${images[i]} a été convertie en ${output}`);
-//     } catch (error) {
-//       console.error(`Erreur lors de la conversion de l'image ${images[i]}:`, error);
-//     }
+// async function convertAndResize(imagePath, sizes) {
+//   const dir = path.dirname(imagePath);
+//   const ext = path.extname(imagePath);
+//   const name = path.basename(imagePath, ext);
+
+//   const webpImage = sharp(imagePath).webp({ quality: 100 });
+
+//   for (let size of sizes) {
+//     const outputPath = path.join(dir, `${name}_${size}w.webp`);
+//     await webpImage.clone().resize(size).toFile(outputPath);
+//     console.log(`L'image a été redimensionnée et sauvegardée en: ${outputPath}`);
 //   }
 // }
-// let all = "./images/slider/"
 
-// format(all)
+// let imageToConvertAndResize = await getImages("./images/slider/");
 
+// for (let i = 0; i < imageToConvertAndResize.length; i++) {
+//   const element = imageToConvertAndResize[i];
+//   const imagePath = element;
+//   const sizes = [1920];
+//   convertAndResize(imagePath, sizes)
+//     .then(() => console.log("Conversion et redimensionnement terminés."))
+//     .catch((error) => console.error("Une erreur est survenue:", error));
+// }
