@@ -3,5 +3,8 @@
     "recursive-readdir": "^2.2.3",
     "recursive-readdir-async": "^1.3.0",
     "sharp": "^0.32.4"
+  },
+  "devDependencies": {
+    "critical": "^5.1.1"
   }
 }
